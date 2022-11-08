@@ -1,0 +1,28 @@
+<div class="main-container" [ngClass]="{'asked': hasAnswer, 'answered': hasAnswer}">
+    <h1>Doctor Llama</h1>
+    <h3>An AI Based Q&A Engine</h3>
+    <div class="question-container">
+        <div class="thinking" *ngIf="isAsked">
+            <mat-progress-bar *ngIf="!hasAnswer" mode="indeterminate"></mat-progress-bar>
+            <h3 *ngIf="!hasAnswer">The Doctor is thinking...</h3>
+            <h3 *ngIf="hasAnswer">Here's what the Doctor has to say:</h3>
+        </div>
+        <mat-form-field appearance="outline" floatLabel="never" style="width: 100%;">
+            <mat-label>Youre question goes here</mat-label>
+            <input [(ngModel)]="question" matInput placeholder="What is the meaning of life?">
+            <mat-hint>The Dr answers best when asked correctly, see how to ask proper questions</mat-hint>
+        </mat-form-field>
+        <div class="buttons-container">
+            <button mat-stroked-button color="primary" (click)="onAsk()">Ask the Dr</button>
+            <button mat-stroked-button>Surprise me</button>
+        </div>
+    </div>
+    <div class="answer-container">
+        <p>
+            <b>Q: {{question}}</b>
+            <br />
+            <b>A:</b> {{answer}}
+        </p>
+        <button mat-stroked-button color="primary" (click)="onAskAgain()">Ask something else</button>
+    </div>
+</div>
