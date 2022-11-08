@@ -2,7 +2,7 @@
     background: white;
     padding: 2em;
     border-radius: 1em;
-    width: 550px;
+    min-width: 550px;
     position: relative;
 }
 
@@ -78,5 +78,23 @@ h3 {
             opacity: 1;
         }
     }
+    }
+}
+
+.question-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.question-extra-form {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    mat-form-field {
+        width: 50%;
+    }
+    mat-select {
+        height: 10px;
     }
 }

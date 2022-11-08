@@ -7,13 +7,31 @@
             <h3 *ngIf="!hasAnswer">The Doctor is thinking...</h3>
             <h3 *ngIf="hasAnswer">Here's what the Doctor has to say:</h3>
         </div>
+        <div class="question-form">
         <mat-form-field appearance="outline" floatLabel="never" style="width: 100%;">
             <mat-label>Youre question goes here</mat-label>
             <input [(ngModel)]="question" matInput placeholder="What is the meaning of life?">
             <mat-hint>The Dr answers best when asked correctly, see how to ask proper questions</mat-hint>
         </mat-form-field>
+        <div class="question-extra-form">
+            <mat-form-field appearance="outline">
+                <mat-label>Field of study</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>    
+            <mat-form-field appearance="outline">
+                <mat-label>Grade / Class</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>  
+        </div>      
+        </div>
         <div class="buttons-container">
-            <button mat-stroked-button color="primary" (click)="onAsk()">Ask the Dr</button>
+            <button mat-stroked-button color="primary" (click)="onAsk()">Ask the Doctor</button>
             <button mat-stroked-button>Surprise me</button>
         </div>
     </div>
